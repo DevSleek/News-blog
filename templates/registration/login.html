@@ -4,8 +4,8 @@
 
 {% block content %}
     <h2>Saytga kirish</h2>
-    <form method="post">{% csrf_token %}
-        {{ form|crispy }}
+    <form method="post" action="{% url 'login' %}">{% csrf_token %}
+        {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Kirish</button>
         <a class="btn btn-outline-danger" href="{% url 'password_reset' %}" role="button">Parolni tiklash</a>
     </form>
